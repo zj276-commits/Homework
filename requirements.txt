@@ -1,0 +1,8 @@
+# Homework 3 — AI report validation experiment (Python 3.10–3.12 recommended)
+httpx>=0.27.0
+python-dotenv>=1.0.0
+pandas>=2.0.0
+numpy>=1.26.0
+scipy>=1.11.0
+matplotlib>=3.8.0
+python-docx>=1.1.0

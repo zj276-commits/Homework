@@ -1,0 +1,17 @@
+# Submission repo — keep output/ artifacts and the .docx tracked (graders click those links).
+# Only ignore local secrets and Python cruft.
+
+.env
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+.mypy_cache/
+.ipynb_checkpoints/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

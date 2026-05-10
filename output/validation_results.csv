@@ -1,0 +1,19 @@
+run_id,prompt_key,prompt_label,replicate,scenario_fidelity_pct,decision_actionability_pct,briefing_structure_score,traceability_pct,overreach_severity,composite_score,validator_notes,report_rel_path
+4341a8ba-ab75-4ed0-9fc4-18733ee805e7,A_minimal_paragraph,Prompt A — minimal paragraph,1,61.77,63.85,5.96,26.98,1,53.0379,MOCK row — synthetic data for offline testing.,reports/MOCK_A_minimal_paragraph_r1.txt
+9b076649-a156-4562-894e-a26773984091,A_minimal_paragraph,Prompt A — minimal paragraph,2,61.12,66.75,5.16,52.04,2,57.8763,MOCK row — synthetic data for offline testing.,reports/MOCK_A_minimal_paragraph_r2.txt
+e739cbc2-fe3f-425a-b1f3-d57657745d7f,A_minimal_paragraph,Prompt A — minimal paragraph,3,59.12,43.1,4.52,28.17,1,43.8991,MOCK row — synthetic data for offline testing.,reports/MOCK_A_minimal_paragraph_r3.txt
+7e353d0a-0be9-409e-a569-b75f33a9422b,A_minimal_paragraph,Prompt A — minimal paragraph,4,36.57,66.79,3.88,31.7,1,43.46,MOCK row — synthetic data for offline testing.,reports/MOCK_A_minimal_paragraph_r4.txt
+716676d7-7ffa-4027-bf08-518ce0025526,A_minimal_paragraph,Prompt A — minimal paragraph,5,72.56,41.37,4.48,46.3,1,51.2497,MOCK row — synthetic data for offline testing.,reports/MOCK_A_minimal_paragraph_r5.txt
+5905adc0-ebf0-45ac-947a-85c9a3cb66bd,A_minimal_paragraph,Prompt A — minimal paragraph,6,59.52,52.39,4.55,33.12,1,47.6253,MOCK row — synthetic data for offline testing.,reports/MOCK_A_minimal_paragraph_r6.txt
+bc43219b-0829-49ac-9136-c8b69a0d2786,B_structured_sections,Prompt B — structured sections,1,65.13,72.81,7.13,48.11,0,64.3316,MOCK row — synthetic data for offline testing.,reports/MOCK_B_structured_sections_r1.txt
+d343a466-6e40-49a3-8434-25ecf091faf9,B_structured_sections,Prompt B — structured sections,2,71.5,71.56,6.86,64.01,0,68.9093,MOCK row — synthetic data for offline testing.,reports/MOCK_B_structured_sections_r2.txt
+014a359f-e60a-47d6-b882-3491670a3195,B_structured_sections,Prompt B — structured sections,3,88.85,79.53,5.64,73.48,0,74.5628,MOCK row — synthetic data for offline testing.,reports/MOCK_B_structured_sections_r3.txt
+5f681790-ec68-4128-a7b5-b91146ec529f,B_structured_sections,Prompt B — structured sections,4,66.29,75.72,7.01,47.23,0,64.8323,MOCK row — synthetic data for offline testing.,reports/MOCK_B_structured_sections_r4.txt
+112207a1-4bed-4200-88c9-b15b910ad773,B_structured_sections,Prompt B — structured sections,5,77.99,62.0,3.45,55.28,1,57.4492,MOCK row — synthetic data for offline testing.,reports/MOCK_B_structured_sections_r5.txt
+49830c6b-4927-4964-9240-06f361e22a7d,B_structured_sections,Prompt B — structured sections,6,65.62,74.88,5.16,51.27,1,60.8446,MOCK row — synthetic data for offline testing.,reports/MOCK_B_structured_sections_r6.txt
+8890ab8d-d21a-44a5-8302-79d243dd627a,C_ICS_traceability,Prompt C — ICS traceability,1,83.83,77.05,7.97,100.0,0,85.138,MOCK row — synthetic data for offline testing.,reports/MOCK_C_ICS_traceability_r1.txt
+2351065d-632f-43ad-a8be-4bfa3868e36d,C_ICS_traceability,Prompt C — ICS traceability,2,70.4,76.86,7.78,81.83,0,76.721,MOCK row — synthetic data for offline testing.,reports/MOCK_C_ICS_traceability_r2.txt
+537083e5-9a99-4c79-93e4-cee5e07c5fad,C_ICS_traceability,Prompt C — ICS traceability,3,70.29,72.51,7.75,74.35,0,73.6744,MOCK row — synthetic data for offline testing.,reports/MOCK_C_ICS_traceability_r3.txt
+4991a91e-0fa8-4366-a9a0-44bb9e4b354e,C_ICS_traceability,Prompt C — ICS traceability,4,92.27,69.53,7.24,92.74,0,81.7316,MOCK row — synthetic data for offline testing.,reports/MOCK_C_ICS_traceability_r4.txt
+e6b0420f-1d5d-42cd-b700-b2966c5dda1c,C_ICS_traceability,Prompt C — ICS traceability,5,76.66,71.83,8.8,70.08,0,76.6486,MOCK row — synthetic data for offline testing.,reports/MOCK_C_ICS_traceability_r5.txt
+27039edc-80d7-47e6-98d7-3e508df292d3,C_ICS_traceability,Prompt C — ICS traceability,6,52.23,77.98,9.03,63.41,1,70.9692,MOCK row — synthetic data for offline testing.,reports/MOCK_C_ICS_traceability_r6.txt

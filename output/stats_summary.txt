@@ -1,0 +1,31 @@
+Homework 3 — Statistical analysis of AI report validation experiment
+========================================================================
+Source CSV: output\validation_results.csv
+N per prompt: {'A_minimal_paragraph': 6, 'B_structured_sections': 6, 'C_ICS_traceability': 6}    (total N = 18)
+
+=== PRIMARY ENDPOINT: composite_score (equal-weight mean of 4 normalized positive dims) ===
+Means: A minimal paragraph=49.52, B structured sections=65.15, C ICS traceability=77.48
+SD:    A minimal paragraph=5.61, B structured sections=6.02, C ICS traceability=5.19
+One-way ANOVA: F = 37.3250,  p = 1.5016e-06
+
+Pairwise Welch t-tests (two-sided) on composite_score:
+  A minimal paragraph vs B structured sections: t=-4.654, p=0.000915571, Cohen's d=-2.687
+  A minimal paragraph vs C ICS traceability: t=-8.961, p=4.4789e-06, Cohen's d=-5.174
+  B structured sections vs C ICS traceability: t=-3.796, p=0.00364284, Cohen's d=-2.192
+
+Bonferroni-adjusted alpha: 0.05 / 3 = 0.01667
+  A minimal paragraph vs B structured sections: p_adj ≈ 0.00274671  (**significant**)
+  A minimal paragraph vs C ICS traceability: p_adj ≈ 1.34367e-05  (**significant**)
+  B structured sections vs C ICS traceability: p_adj ≈ 0.0109285  (**significant**)
+
+=== Verdict ===
+Reject H0 (p_anova = 1.502e-06 < 0.05). Highest mean composite score: **C ICS traceability** (77.48).
+Significantly different pairs (after Bonferroni): A minimal paragraph ≠ B structured sections; A minimal paragraph ≠ C ICS traceability; B structured sections ≠ C ICS traceability
+
+=== SECONDARY: per-dimension one-way ANOVA ===
+dimension                                 F              p best (highest mean)           
+scenario_fidelity_pct                 3.277      0.0659379 C ICS traceability            
+decision_actionability_pct           10.376     0.00148221 C ICS traceability            
+briefing_structure_score             17.113     0.00013464 C ICS traceability            
+traceability_pct                     21.502      3.933e-05 C ICS traceability            
+overreach_severity                    8.611     0.00323235 C ICS traceability (lowest mean = best)

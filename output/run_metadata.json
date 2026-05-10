@@ -1,0 +1,20 @@
+{
+  "mode": "mock",
+  "replicates_per_prompt": 6,
+  "prompt_keys": [
+    "A_minimal_paragraph",
+    "B_structured_sections",
+    "C_ICS_traceability"
+  ],
+  "rubric_dimensions": [
+    "scenario_fidelity_pct",
+    "decision_actionability_pct",
+    "briefing_structure_score",
+    "traceability_pct"
+  ],
+  "composite_definition": "equal-weighted mean of normalized positive dimensions (0-100)",
+  "model_generator": "MOCK",
+  "model_validator": "MOCK",
+  "n_rows": 18,
+  "generated_at_utc": "2026-05-10T23:26:20.285045+00:00"
+}

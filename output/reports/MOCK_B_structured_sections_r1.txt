@@ -1,0 +1,2 @@
+[MOCK REPORT B_structured_sections replicate 1]
+Placeholder for offline testing.
