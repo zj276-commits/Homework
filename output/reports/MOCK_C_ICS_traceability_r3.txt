@@ -1,2 +1,0 @@
-[MOCK REPORT C_ICS_traceability replicate 3]
-Placeholder for offline testing.

@@ -1,4 +1,4 @@
-# Submission repo — keep output/ artifacts and the .docx tracked (graders click those links).
+# Local secrets and Python cruft (output/ may be committed for grading links).
 # Only ignore local secrets and Python cruft.
 
 .env

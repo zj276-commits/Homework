@@ -1,2 +1,0 @@
-[MOCK REPORT A_minimal_paragraph replicate 6]
-Placeholder for offline testing.

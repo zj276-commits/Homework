@@ -311,6 +311,79 @@ def _validate_existing_reports(
     return csv_path
 
 
+def validate_one_report_file(
+    report_path: Path,
+    prompt_key: str | None,
+    base: str,
+    api_key: str,
+    model_val: str,
+    scenario: str,
+    output_dir: Path,
+) -> dict:
+    """Score a single report via the live validator; write sidecar files (does not touch validation_results.csv)."""
+    report_path = report_path.resolve()
+    if not report_path.is_file():
+        raise SystemExit(f"Not a file: {report_path}")
+
+    stem = report_path.stem
+    if stem.startswith("MOCK_"):
+        stem = stem.removeprefix("MOCK_")
+    pk = prompt_key
+    if pk is None:
+        pk = next((k for k in PROMPT_KEYS if stem.startswith(k)), None)
+    if pk is None:
+        raise SystemExit(
+            f"Cannot infer prompt_key from filename '{report_path.name}'. "
+            f"Pass --prompt-key with one of: {', '.join(PROMPT_KEYS)}"
+        )
+
+    report_text = report_path.read_text(encoding="utf-8")
+    print(f"\n=== Validate ONE report: {report_path.name} (prompt_key={pk}) ===")
+    print(f"Validator model: {model_val}")
+
+    val_msgs = [
+        {"role": "system", "content": "Output only valid JSON. No markdown fences."},
+        {"role": "user", "content": validator_prompt(report_text, scenario)},
+    ]
+    raw_val = ollama_chat(base, api_key, model_val, val_msgs, format_json=True, temperature=0.15)
+    try:
+        vj = extract_json_object(raw_val)
+    except Exception as e:
+        print(f"VALIDATION PARSE ERROR: {e}\nRaw:\n{raw_val[:1200]}", file=sys.stderr)
+        raise
+
+    scores = {d: vj.get(d, 0) for d in RUBRIC_DIMENSIONS}
+    scores["overreach_severity"] = vj.get("overreach_severity", 0)
+    rel_path = str(report_path)
+    row = _row_from_scores(pk, 1, scores, vj.get("validator_notes", ""), rel_path)
+
+    output_dir.mkdir(parents=True, exist_ok=True)
+    one_csv = output_dir / "validation_one_report.csv"
+    one_json = output_dir / "validation_one_report.json"
+    pd.DataFrame([row]).to_csv(one_csv, index=False)
+
+    bundle = {
+        "report_path": rel_path,
+        "prompt_key": pk,
+        "validator_model": model_val,
+        "row": row,
+        "validator_scores_json": vj,
+        "validated_at_utc": datetime.now(timezone.utc).isoformat(),
+    }
+    one_json.write_text(json.dumps(bundle, indent=2, ensure_ascii=False), encoding="utf-8")
+
+    print("\n--- Scores ---")
+    for d in RUBRIC_DIMENSIONS:
+        print(f"  {d}: {row[d]}")
+    print(f"  overreach_severity: {row['overreach_severity']}")
+    print(f"  composite_score: {row['composite_score']}")
+    print(f"  validator_notes: {row['validator_notes']}")
+    print(f"\nWrote {one_csv}")
+    print(f"Wrote {one_json}")
+    print("(Full experiment CSV validation_results.csv was not modified.)")
+    return row
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description="Homework 3 validation experiment")
     parser.add_argument("--mock", action="store_true", help="No API; write synthetic CSV + stub reports")
@@ -320,6 +393,23 @@ def main() -> None:
         type=str,
         default=None,
         help="Validate existing .txt reports in this folder instead of generating new ones.",
+    )
+    parser.add_argument(
+        "--validate-one",
+        type=str,
+        default=None,
+        metavar="REPORT.txt",
+        help=(
+            "Live API: score a single .txt report only. Writes output/validation_one_report.csv "
+            "+ .json; does not overwrite validation_results.csv."
+        ),
+    )
+    parser.add_argument(
+        "--prompt-key",
+        type=str,
+        default=None,
+        choices=PROMPT_KEYS,
+        help="With --validate-one, required only if the filename does not start with a known prompt key prefix.",
     )
     args = parser.parse_args()
 
@@ -342,9 +432,21 @@ def main() -> None:
     )
     model_val = os.environ.get("OLLAMA_MODEL_VALIDATOR", "").strip() or model_gen
     if not api_key:
-        print("Set OLLAMA_API_KEY in homework3/.env (see .env.example). Or use --mock.", file=sys.stderr)
+        print("Set OLLAMA_API_KEY in .env at the project root (see .env.example). Or use --mock.", file=sys.stderr)
         sys.exit(1)
     scenario = _load_scenario()
+
+    if args.validate_one:
+        validate_one_report_file(
+            Path(args.validate_one).resolve(),
+            args.prompt_key,
+            base,
+            api_key,
+            model_val,
+            scenario,
+            output_dir,
+        )
+        return
 
     if args.reports_dir:
         _validate_existing_reports(

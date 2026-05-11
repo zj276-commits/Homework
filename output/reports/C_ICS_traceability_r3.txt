@@ -1,0 +1,17 @@
+**Situation:**  
+The exercise is a full‑scale county emergency drill designated Exercise Riverdale (F1). It is occurring in River County at unified staging area Depot 7, grid RC‑17 (F2). The exercise window runs from 06:00 to 14:00 local time on the scheduled day (F3). The EOC is operating at Level 2 partial with three departments providing liaison officers – Fire, EMS, and Public Works (F4). At 09:30 a simulated chlorine odor was reported near the old mill, but it is purely an exercise scenario (F5). No real injuries have occurred; all casualties are role‑players (F6). Communications are using the primary 800 MHz county talkgroup TAC‑2, with satellite phones issued to branch directors as backup (F7). A single county PIO statement is scheduled for 11:00 to convey that an exercise is in progress and there is no danger to the public (F8). After‑action reporting requires a formal AAR due N+10 business days to the county EM office (F9). Logistics constraints note that potable water bladders are not deployed in this scenario version (F10).  
+
+**Objectives:**  
+Validate EOC activation procedures and inter‑agency coordination (F4). Test communication pathways and public‑information release timing (F7)(F8). Assess response to a simulated hazardous‑material indicator without an actual hazard (F5)(F6).  
+
+**Current actions:**  
+EOC personnel are monitoring the exercise window and maintaining situational awareness (F3)(F4). Branch directors have been issued satellite phones for backup communications (F7). The simulated chlorine‑odor inject is being observed by exercise controllers (F5).  
+
+**Comms:**  
+Primary communications channel is 800 MHz TAC‑2 (F7). Backup satellite phones are operational with branch directors (F7).  
+
+**Public info:**  
+A scheduled PIO statement will be released at 11:00 to inform the public that the exercise is ongoing and there is no danger (F8).  
+
+**Logistics gaps:**  
+No potable water bladders have been deployed, reflecting the tabletop‑only logistics configuration (F10).

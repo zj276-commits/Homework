@@ -1,0 +1,29 @@
+**Situation**  
+Exercise Riverdale is a full-scale county emergency exercise (F1) scheduled for 06:00–14:00 at River County, unified staging at Depot 7 grid RC‑17 (F2,F3).  
+The EOC will operate at Level 2 partial with Fire, EMS, and Public Works liaison officers committed (F4).  
+At 09:30 a simulated chlorine odor will be reported near the old mill; all casualties are role‑players (F5,F6).  
+The exercise is designated as a full-scale drill for county emergency management training (F1).  
+
+**Objectives**  
+Validate EOC activation and inter‑agency coordination (F4).  
+Test response to a simulated hazmat odor incident (F5).  
+Assess timeliness of public information release (F8).  
+Produce an after‑action report due N+10 business days (F9).  
+The drill aims to evaluate communication redundancy using satellite phones (F7).  
+
+**Current actions**  
+EOC staff will monitor the exercise window and track status updates (F3).  
+Branch directors will receive satellite phone updates if primary TAC‑2 fails (F7).  
+Logistics personnel will note the absence of potable water bladders as a constraint (F10).  
+Logistics staff will verify that no potable water bladders are staged, reflecting budget constraints (F10).  
+
+**Comms**  
+Primary channel is 800 MHz TAC‑2; backup satellite phones are issued to branch directors (F7).  
+Backup satellite phones will be tested for functionality during the exercise (F7).  
+
+**Public info**  
+A single PIO statement will be released at 11:00 confirming the exercise and stating no danger to the public (F8).  
+
+**Logistics gaps**  
+Potable water bladders are not deployed in this scenario version (F10).  
+Because water bladders are unavailable, alternative water sources must be identified if the scenario escalates (F10).

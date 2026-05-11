@@ -177,7 +177,7 @@ def main() -> None:
     out_txt.write_text("\n".join(lines) + "\n", encoding="utf-8")
     print(out_txt.read_text(encoding="utf-8"))
 
-    # ---------- per-dimension table CSV (useful for the .docx table) ----------
+    # ---------- per-dimension table CSV (for write-ups / tables) ----------
     table_rows = []
     for dim in RUBRIC_DIMENSIONS + ["overreach_severity", "composite_score"]:
         row = {"dimension": dim}

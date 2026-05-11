@@ -1,0 +1,29 @@
+**Situation**  
+- The exercise is Exercise Riverdale, a full‑scale county emergency drill (F1).  
+- It is scheduled for 06:00–14:00 local time on the exercise day (F3).  
+- The unified staging area is Depot 7, grid RC‑17 (F2).  
+- The EOC is operating at Level 2 partial with three liaison officers from Fire, EMS, and Public Works (F4).  
+- No real injuries are expected; any casualties are role‑players (F6).  
+- The scenario includes a simulated chlorine odor at the old mill at 09:30 (F5).  
+
+**Objectives**  
+- Validate inter‑agency coordination and communication procedures (F4,F7).  
+- Test public information messaging and timing (F8).  
+- Conduct after‑action review within ten business days (F9).  
+
+**Current actions**  
+- EOC staff are monitoring the exercise window and will receive the simulated chlorine odor report at 09:30 (F5).  
+- Liaison officers are positioned at the staging area to relay information (F4).  
+- Primary communications use 800 MHz talkgroup TAC‑2; backup satellite phones are on standby (F7).  
+- A single public information statement will be released at 11:00 stating that an exercise is in progress and there is no danger to the public (F8).  
+
+**Comms**  
+- All field units are instructed to use TAC‑2 for routine traffic (F7).  
+- Satellite phones will be activated only if primary network degrades (F7).  
+
+**Public info**  
+- The scheduled PIO statement at 11:00 will convey “exercise in progress, no danger to public” (F8).  
+
+**Logistics gaps**  
+- Potable water bladders are not deployed in this scenario version (F10).  
+- No real hazmat release or mass casualties are occurring; the chlorine odor is simulated (F5,F6).

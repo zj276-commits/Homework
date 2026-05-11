@@ -15,17 +15,15 @@ py -3.12 -m venv .venv
 copy .env.example .env       # then edit and set OLLAMA_API_KEY
 .\.venv\Scripts\python run_experiment.py
 .\.venv\Scripts\python analyze_experiment.py
-.\.venv\Scripts\python build_submission_docx.py
 ```
 
-Open `HOMEWORK3_submission.docx` in Word; write Section 1 yourself (≈500 words, **not AI-generated**), paste your screenshots, swap repo links for your fork, save, and upload to Canvas.
+Assemble your course submission from `output/` (for example `stats_summary.txt`, `validation_results.csv`, and the PNG plots).
 
 **Offline smoke test** (no API bill, useful for development):
 
 ```text
 .\.venv\Scripts\python run_experiment.py --mock
 .\.venv\Scripts\python analyze_experiment.py
-.\.venv\Scripts\python build_submission_docx.py
 ```
 
 **Validate your existing Homework 1 / 2 reports** instead of generating new briefings:
@@ -35,6 +33,14 @@ Open `HOMEWORK3_submission.docx` in Word; write Section 1 yourself (≈500 words
 ```
 
 Reports whose filenames start with `A_minimal_paragraph`, `B_structured_sections`, or `C_ICS_traceability` are grouped by prompt; others are kept as `other` and excluded from the A/B/C ANOVA.
+
+**Re-validate a single report (live API)** without overwriting the full experiment CSV:
+
+```text
+.\.venv\Scripts\python run_experiment.py --validate-one path\to\one_report.txt --prompt-key C_ICS_traceability
+```
+
+If the filename already starts with a prompt key (e.g. `C_ICS_traceability_r1.txt`), you may omit `--prompt-key`. Outputs: `output/validation_one_report.csv` and `output/validation_one_report.json`.
 
 ---
 
@@ -66,9 +72,9 @@ Outputs (under `output/`):
 
 ---
 
-## Validation rubric (customized — not LAB Likert)
+## Validation rubric 
 
-| Dimension | Scale | Contrast with LAB Likert (`09_text_analysis/02_ai_quality_control.R`) |
+| Dimension | Scale | Contrast with LAB Likert |
 |-----------|-------|-----------------------------------------------------------------------|
 | `scenario_fidelity_pct` | 0–100 % | LAB scores generic *accuracy* (1–5 Likert); here it is graded against a labeled fact pack (F1–F10) — a continuous coverage metric, not a vibe. |
 | `decision_actionability_pct` | 0–100 % | LAB has no operational-usability axis. We score whether a coordinator can derive next-hour actions from the briefing alone. |
@@ -90,18 +96,9 @@ Outputs (under `output/`):
 
 ---
 
-## Canvas deliverable (.docx)
+## Course submission artifacts
 
-[`build_submission_docx.py`](build_submission_docx.py) writes **`HOMEWORK3_submission.docx`** with:
-
-- Rubric table (Section 3)
-- Auto-embedded `stats_summary.txt` (Section 4)
-- Auto-embedded `per_dimension_summary.csv` as a table (Section 4a)
-- Both figures auto-embedded (Section 5)
-- Sample report text + first rows of `validation_results.csv` (Section 6)
-- Run metadata + usage block (Section 7)
-- Screenshot checklist (Section 8)
-- A clearly marked **Section 1** with an italic "must be written by the student, NOT AI" placeholder you replace before upload.
+Primary files for graders and write-ups live under **`output/`** (`stats_summary.txt`, `validation_results.csv`, `per_dimension_summary.csv`, plots, `reports/`, `run_metadata.json`).
 
 ---
 
@@ -123,7 +120,7 @@ Submission repo: **<https://github.com/zj276-commits/Homework>**
 - **HTTP 401 / 429 from Ollama Cloud** — confirm `OLLAMA_API_KEY`, reduce `--replicates`, or increase the inter-call sleep in `run_experiment.py`.
 - **Validator returns non-JSON** — the JSON-extraction regex tolerates the most common cases; if it still fails, lower validator temperature (already 0.15) or switch `OLLAMA_MODEL_VALIDATOR` to a more JSON-reliable model.
 - **ANOVA p = NaN** — all scores identical inside at least one group. Raise replicates and/or temperatures.
-- **`build_submission_docx.py` complains about missing files** — re-run `analyze_experiment.py` first.
+- **Missing plots or `stats_summary.txt`** — re-run `analyze_experiment.py`.
 
 ---
 

@@ -1,0 +1,11 @@
+## Situation
+The exercise, designated Exercise Riverdale, is a full‑scale county emergency drill taking place on the scheduled exercise day from 06:00 to 14:00 local time. It is being staged at River County’s unified depot, Grid RC‑17, with the EOC operating at Level 2 partial and three liaison officers from Fire, EMS, and Public Works committed. No real incident is occurring; all reported hazards are part of the drill scenario.  
+
+## Current actions
+The EOC has activated primary communications on the 800 MHz county talkgroup TAC‑2, with satellite phones on standby for branch directors as backup. A single public information officer statement will be released at 11:00, confirming that the exercise is underway and that there is no danger to the public. Departments are executing their drill‑specific response tasks, including monitoring the simulated chlorine odor reported at 09:30 near the old mill.  
+
+## Risks / unknowns
+The only inject scheduled is a simulated chlorine odor at 09:30, which could be misinterpreted if not clearly identified as exercise‑only, creating a perception of a real hazard. Logistics for this scenario version do not include potable water bladders, limiting realistic response options for certain support functions. The after‑action report is due N+10 business days, requiring timely data collection and analysis to capture lessons learned.  
+
+## Coordination
+Three department liaison officers will rotate through the unified command post to synchronize updates and ensure consistent messaging across Fire, EMS, and Public Works. The PIO will manage all external communications, using the pre‑approved single statement and monitoring any emergent inquiries. Backup satellite communication will be overseen by branch directors to maintain contact if primary talkgroup traffic becomes saturated.

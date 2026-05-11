@@ -1,5 +1,5 @@
 {
-  "mode": "mock",
+  "mode": "live",
   "replicates_per_prompt": 6,
   "prompt_keys": [
     "A_minimal_paragraph",
@@ -13,8 +13,8 @@
     "traceability_pct"
   ],
   "composite_definition": "equal-weighted mean of normalized positive dimensions (0-100)",
-  "model_generator": "MOCK",
-  "model_validator": "MOCK",
+  "model_generator": "nemotron-3-nano:30b-cloud",
+  "model_validator": "nemotron-3-nano:30b-cloud",
   "n_rows": 18,
-  "generated_at_utc": "2026-05-10T23:26:20.285045+00:00"
+  "generated_at_utc": "2026-05-11T01:28:46.099750+00:00"
 }
